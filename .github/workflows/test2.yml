@@ -2,7 +2,7 @@ name: t2
 on: 
   push:
 env:
-  WF_ENF: all jobs
+  WF_ENV: all jobs
 jobs:
   log-env:
     runs-on: ubuntu-latest
