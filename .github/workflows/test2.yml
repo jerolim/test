@@ -1,5 +1,7 @@
 name: t2
-on: [push]
+on: 
+  schedule:
+    - cron: "0/5 * * * *"
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
