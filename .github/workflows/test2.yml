@@ -2,7 +2,7 @@ name: t2
 on: 
   push:
 env:
-  WF_ENV: ${{ secrets.WF_ENV}}
+  WF_ENV: All jobs
 jobs:
   log-env:
     runs-on: ubuntu-latest
@@ -43,7 +43,8 @@ jobs:
           pwd
           ls -a
           git init
-          git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN }}@github.com/
+          git remote add origin "https://$GITHUB_ACTOR:${{
+          secrets.GITHUB_TOKEN }}@github.com/
           $GITHUB_REPOSITORY.git"
           git config --global user.email bot@bot.com
           git config --global user.name "mybot"
@@ -51,9 +52,9 @@ jobs:
           git checkout master
           git branch --set-upstream-to=origin/master
           git pull
-          ls --a
+          ls -a
           echo $RANDOM >> random.txt
-          ls --a
+          ls -a
           git add -A
           git commit -m"Random"
           git push
